@@ -1,5 +1,11 @@
-qt5integration (1.0.0) unstable; urgency=medium
+qt5integration (0.0.2-1) unstable; urgency=medium
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * New upstream release.
+
+ -- Boyuan Yang <073plan@gmail.com>  Wed, 28 Dec 2016 16:30:37 +0800
+
+qt5integration (0.0.1) unstable; urgency=medium
+
+  * Initial release.
 
  -- Deepin Packages Builder <packages@deepin.com>  Tue, 08 Nov 2016 15:10:02 +0800

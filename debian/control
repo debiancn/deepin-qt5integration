@@ -1,19 +1,54 @@
-Source: qt5integration
+Source: deepin-qt5integration
 Section: devel
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-Depends: debhelper (>=9), git, qt5-default, qtbase5-dev, libqt5widgets5, libqt5gui5,
-	qtbase5-private-dev, libqt5xdg-dev, libdtkbase-dev, libdtkutil-dev, libdtkwidget-dev,
-	pkg-config, libgtk2.0-dev, libqt5x11extras5-dev, libxcb-xkb-dev, libxcb-render-util0-dev,
-	libxcb-image0-dev, libxcb-icccm4-dev, libxcb-keysyms1-dev, libegl1-mesa-dev, libmtdev-dev,
-	libxkbcommon-x11-dev, libdbus-1-dev, libqt5opengl5-dev, libudev-dev, libxrender-dev,
-	libxi-dev, libsm-dev, libice-dev, libfontconfig1-dev, libfreetype6-dev, libglib2.0-dev,
-	ca-certificates, libxcb-xinerama0-dev, libqt5svg5-dev
+Uploaders:
+ Boyuan Yang <073plan@gmail.com>
+Build-Depends:
+ ca-certificates,
+ debhelper (>=9),
+ git,
+ libdbus-1-dev,
+ libdtkbase-dev,
+ libdtkutil-dev,
+ libdtkwidget-dev,
+ libegl1-mesa-dev,
+ libfontconfig1-dev,
+ libfreetype6-dev,
+ libglib2.0-dev,
+ libgtk2.0-dev,
+ libice-dev,
+ libmtdev-dev,
+ libqt5gui5,
+ libqt5opengl5-dev,
+ libqt5svg5-dev,
+ libqt5widgets5,
+ libqt5x11extras5-dev,
+ libqt5xdg-dev,
+ libsm-dev,
+ libudev-dev,
+ libxcb-icccm4-dev,
+ libxcb-image0-dev,
+ libxcb-keysyms1-dev,
+ libxcb-render-util0-dev,
+ libxcb-xinerama0-dev,
+ libxcb-xkb-dev,
+ libxi-dev,
+ libxkbcommon-x11-dev,
+ libxrender-dev,
+ pkg-config,
+ qtbase5-dev,
+ qtbase5-private-dev,
 Standards-Version: 3.9.8
 
 Package: dde-qt5integration
 Architecture: any
-Conflicts: libqt5dxcb-plugin, libqt5deepintheme-plugin
-Depends: ${shlibs:Depends}, ${misc:Depends}, git
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Conflicts:
+ libqt5deepintheme-plugin,
+ libqt5dxcb-plugin,
+Depends:
+ git,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Deepin Qt5 Integration
+ This package provides with the integration of DDE with Qt5.
