@@ -6,7 +6,7 @@ Uploaders:
  Boyuan Yang <073plan@gmail.com>
 Build-Depends:
  ca-certificates,
- debhelper (>=9),
+ debhelper (>=10~),
  git,
  libdbus-1-dev,
  libdtkbase-dev,
@@ -19,10 +19,8 @@ Build-Depends:
  libgtk2.0-dev,
  libice-dev,
  libmtdev-dev,
- libqt5gui5,
  libqt5opengl5-dev,
  libqt5svg5-dev,
- libqt5widgets5,
  libqt5x11extras5-dev,
  libqt5xdg-dev,
  libsm-dev,
