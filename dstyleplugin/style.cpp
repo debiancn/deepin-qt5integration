@@ -274,7 +274,7 @@ int Style::pixelMetric(QStyle::PixelMetric metric, const QStyleOption *option, c
         // sliders
     case PM_SliderThickness: return Metrics::Slider_ControlThickness;
     case PM_SliderControlThickness: return Metrics::Slider_ControlThickness;
-    case PM_SliderLength: return Metrics::Slider_ControlThickness;
+    case PM_SliderLength: return Metrics::Slider_ControlThickness / 1.3;
 
         // checkboxes and radio buttons
     case PM_IndicatorWidth: return Metrics::CheckBox_Size;
@@ -328,6 +328,7 @@ QRect Style::subElementRect(QStyle::SubElement r, const QStyleOption *opt, const
     case SE_ProgressBarGroove: return progressBarGrooveRect( opt, widget );
     case SE_ProgressBarContents: return progressBarContentsRect( opt, widget );
     case SE_ProgressBarLabel: return progressBarLabelRect( opt, widget );
+    case SE_HeaderArrow: return headerArrowRect( opt, widget );
     default:
         break;
     }
@@ -436,7 +437,7 @@ void Style::drawPrimitive(QStyle::PrimitiveElement element, const QStyleOption *
         return drawStandardIcon(QStyle::SP_ArrowRight, option, painter, widget);
     case PE_IndicatorArrowUp:
         return drawStandardIcon(QStyle::SP_ArrowUp, option, painter, widget);
-        //    case PE_IndicatorHeaderArrow: fcn = &Style::drawIndicatorHeaderArrowPrimitive; break;
+    case PE_IndicatorHeaderArrow: fcn = &Style::drawIndicatorHeaderArrowPrimitive; break;
         //    case PE_IndicatorToolBarHandle: fcn = &Style::drawIndicatorToolBarHandlePrimitive; break;
         //    case PE_IndicatorToolBarSeparator: fcn = &Style::drawIndicatorToolBarSeparatorPrimitive; break;
         //    case PE_IndicatorBranch: fcn = &Style::drawIndicatorBranchPrimitive; break;
@@ -495,7 +496,8 @@ QSize Style::sizeFromContents(QStyle::ContentsType type, const QStyleOption *opt
     switch (type) {
     case CT_PushButton:
         if (const QStyleOptionButton *btn = qstyleoption_cast<const QStyleOptionButton *>(option)) {
-            if (!btn->text.isEmpty() && newSize.width() < 80)
+            const bool flat = btn->features & QStyleOptionButton::Flat;
+            if (!btn->text.isEmpty() && newSize.width() < 80 && !flat )
                 newSize.setWidth(80);
             if (!btn->icon.isNull() && btn->iconSize.height() > 16)
                 newSize -= QSize(0, 2);
@@ -1036,6 +1038,10 @@ void Style::drawDeepinStyleIcon(const QString &name, const QStyleOption *opt, QP
 
     if (m_type == StyleDark)
         style_name = "dark";
+    else if (m_type == StyleSemiDark)
+        style_name = "semidark";
+    else if (m_type == StyleSemiLight)
+        style_name = "semilight";
 
     const QStringList formatList = QStringList() << "png" << "svg";
     QPixmap pixmap;

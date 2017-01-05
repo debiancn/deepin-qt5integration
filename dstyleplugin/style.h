@@ -77,7 +77,7 @@ private:
     QRect sliderSubControlRect(const QStyleOptionComplex *option, SubControl subControl, const QWidget *widget ) const;
     bool drawSlider(ComplexControl control, const QStyleOptionComplex *opt, QPainter *p, const QWidget *w) const;
     void drawSliderGroove(QPainter*, const QRect&, const QBrush & brush) const;
-    void drawSliderHandle(QPainter* painter, const QRect& rect, const QBrush &brush, const QColor& outline, const QString &type) const;
+    void drawSliderHandle(QPainter* painter, const QStyleOptionSlider *option, const QRect& rect, const QString &type) const;
     bool drawSliderTickmarkLabels(const QStyleOption*, QPainter*, const QWidget*) const;
 
     // check box
@@ -106,6 +106,10 @@ private:
 
     // rubber band
     bool drawRubberBandControl(const QStyleOption *option, QPainter *painter, const QWidget *widget) const;
+
+    // header view
+    bool drawIndicatorHeaderArrowPrimitive(QStyle::PrimitiveElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const;
+    QRect headerArrowRect(const QStyleOption *opt, const QWidget *widget) const;
 
     StyleType m_type;
     PaletteExtended *m_palette = Q_NULLPTR;

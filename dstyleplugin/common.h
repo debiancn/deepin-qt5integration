@@ -12,7 +12,7 @@
 
 namespace dstyle {
 
-enum StyleType { StyleDark, StyleLight };
+enum StyleType { StyleDark, StyleLight, StyleSemiDark, StyleSemiLight };
 
 enum Metrics
 {
@@ -104,10 +104,10 @@ enum Metrics
     TitleBar_MarginWidth = 4,
 
     // sliders
-    Slider_TickLength = 8,
-    Slider_TickMarginWidth = 2,
+    Slider_TickLength = 10,
+    Slider_TickMarginWidth = 6,
     Slider_GrooveThickness = 2,
-    Slider_ControlThickness = 14,
+    Slider_ControlThickness = 22,
 
     // tabbar
     TabBar_TabMarginHeight = 4,
@@ -132,7 +132,7 @@ enum Metrics
     // list headers
     Header_MarginWidth = 6,
     Header_ItemSpacing = 4,
-    Header_ArrowSize = 10,
+    Header_ArrowSize = 12,
 
     // tree view
     ItemView_ArrowSize = 10,

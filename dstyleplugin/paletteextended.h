@@ -53,6 +53,7 @@ public:
         Slider_GrooveColor,
         Slider_GrooveHighlightColor,
         Slider_HandleBrush,
+        Slider_VernierHandleBrush,
         Slider_HandleBorderColor,
         Slider_TickmarkColor,
 
@@ -71,7 +72,10 @@ public:
         RadioButton_BackgroundBrush,
 
         RubberBand_BackgroundBrush,
-        RubberBand_BorderBrush
+        RubberBand_BorderBrush,
+
+        HeaderView_ArrowIndicatorUpIcon,
+        HeaderView_ArrowIndicatorDownIcon
     };
     Q_ENUM(BrushName)
 

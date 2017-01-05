@@ -28,7 +28,8 @@ SOURCES += dstyleplugin.cpp \
     dstyleanimation.cpp \
     progressbarhelper.cpp \
     checkboxhelper.cpp \
-    rubberbandhelper.cpp
+    rubberbandhelper.cpp \
+    headerviewhelper.cpp
 
 HEADERS += dstyleplugin.h \
     style.h \
@@ -53,4 +54,6 @@ RESOURCES += \
     brushchemes.qrc \
     assets_light.qrc \
     assets_dark.qrc \
+    assets_semidark.qrc \
+    assets_semilight.qrc \
     assets.qrc
